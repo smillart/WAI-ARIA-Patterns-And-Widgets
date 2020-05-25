@@ -3,6 +3,10 @@
  * @file
  * Accordion (Sections With Show/Hide Functionality).
  *
+ * Author: Sébastien Millart.
+ * Version: 1.0.1
+ * Licence: https://github.com/smillart/WAI-ARIA-Patterns-And-Widgets/blob/master/LICENSE
+ *
  * The following javascript implements ARIA Authoring Practices for an accordion,
  * vertically stacked set of interactive headings that each contain a title,
  * content snippet, or thumbnail representing a section of content.

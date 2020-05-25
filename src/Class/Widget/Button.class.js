@@ -3,7 +3,7 @@
  * JavaScript class which manages the "Button" behavior.
  *
  * Author: Sébastien Millart.
- * Version: 1.0
+ * Version: 1.0.1
  * Licence: https://github.com/smillart/WAI-ARIA-Patterns-And-Widgets/blob/master/LICENSE
  */
 
