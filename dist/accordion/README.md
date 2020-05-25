@@ -1,3 +1,4 @@
+
 # Accordion (Sections With Show/Hide Functionality)
 
 An accordion is a vertically stacked set of interactive headings that each contain a title, content snippet, or thumbnail representing a section of content. The headings function as controls that enable users to reveal or hide their associated sections of content. Accordions are commonly used to reduce the need to scroll when presenting multiple sections of content on a single page.
@@ -34,7 +35,7 @@ To ensure legacy browsers support hidden accordion panels need to define default
 
 The following `data` attributes can be added on the accordion `div` container to alter the default setup settings.
 
-| `data`&nbsp;Attribute&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Usage |
+| `data`&nbsp;Attribute&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Usage |
 |:--|:--|
 | **`data-aria-accordion`** | Default required implementation. One panel will be expanded at all times and only one panel will be allowed to be expanded; so, do not support a collapse function. |
 | **`data-aria-accordion-custom-class`** | Allow to add a custom class on the accordion wrapper to be able to define a specific look and feel. |
@@ -42,3 +43,15 @@ The following `data` attributes can be added on the accordion `div` container to
 | **`data-aria-accordion-allow-toggle`** | Allow for each toggle to both open and close its section. Makes it possible for all sections to be closed. Assumes only one section may be open. |
 | **`data-aria-accordion-allow-multiple`** | Allow for multiple accordion sections to be expanded at the same time. Assumes each toggle to both open and close otherwise the toggle on open sections would be disabled. |
 | **`data-aria-accordion-panel-transition`** | Will add a modifier class to each accordion panel where CSS transitions can be applied from hidden to revealed state. |
+
+## Keyboard Interaction
+
+| Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Function |
+|:--|:--|
+| `Space` or `Enter` | **-** When focus is on the accordion header for a collapsed panel, expands the associated panel. If the implementation allows only one panel to be expanded, and if another panel is expanded, collapses that panel.<br>**-** When focus is on the accordion header for an expanded panel, collapses the panel if the implementation supports collapsing. Some implementations require one panel to be expanded at all times and allow only one panel to be expanded; so, they do not support a collapse function. |
+| `Tab` | Moves focus to the next focusable element; all focusable elements in the accordion panel are included in the page `Tab` sequence. |
+| `Shift` + `Tab` | Moves focus to the previous focusable element; all focusable elements in the accordion panel are included in the page `Tab` sequence. |
+| `Down Arrow` | If focus is on an accordion header, moves focus to the next accordion header. If focus is on the last accordion header, moves focus to the first accordion header. |
+| `Up Arrow` | If focus is on an accordion header, moves focus to the previous accordion header. If focus is on the first accordion header, moves focus to the last accordion header. |
+| `Home` | When focus is on an accordion header, moves focus to the first accordion header. |
+| `End` | When focus is on an accordion header, moves focus to the last accordion header. |
