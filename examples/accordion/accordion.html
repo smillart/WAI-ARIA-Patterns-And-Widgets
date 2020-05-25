@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Progressively Enhanced Accordions that implements ARIA Authoring Practices 1.1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script>
+      // Add 'js' to the HTML
+      document.documentElement.className = 'js';
+    </script>
+    <link rel="stylesheet" href="../../web/css/base.css" />
+    <link rel="stylesheet" href="css/accordion.css" />
+    <link rel="stylesheet" href="../../dist/accordion/css/accordion.min.css" />
+  </head>
+  <body>
+    <main role="main">
+      <nav aria-label="Related Links">
+        <ul>
+          <li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion">Accordion Design Pattern in WAI-ARIA Authoring Practices 1.1</a></li>
+          <li><a href="https://github.com/smillart/WAI-ARIA-Patterns-And-Widgets/dist/accordion">Accordion Source Code for these Examples on GitHub</a></li>
+        </ul>
+      </nav>
+      <h1>Progressively Enhanced Accordions that implements ARIA Authoring Practices 1.1</h1>
+      <p>The below example sections demonstrate the design pattern for accordion. The visual design includes features intended to help users understand that the accordion provides enhanced keyboard navigation functions.</p>
+      <p>Notice that when JavaScript disabled, each section retains an appropriate document structure and the content is completely accessible.</p>
+      <section>
+        <h2>Example 1: The default one. Only one panel may be expanded at a time, but do not support a collapse function.</h2>
+        <div id="accExample" data-aria-accordion>
+          <h3 data-aria-accordion-heading>Accordion Header 1</h3>
+          <div data-aria-accordion-panel>
+            <p>This implementation is the default one and does not require any options. One panel will be expanded at all times and only one panel will be allowed to be expanded; so, do not support a collapse function.</p>
+          </div>
+          <h3 data-aria-accordion-heading>Accordion Header 2</h3>
+          <div data-aria-accordion-panel>
+            <p>When an accordion panel associated with an accordion header is visible, given that the accordion does not permit the panel to be collapsed, the accordion header <code>button</code> element has an <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-disabled">aria-disabled</a> attribute which is set to <code>true</code>.</p>
+          </div>
+          <h3 data-aria-accordion-heading>Accordion Header 3</h3>
+          <div data-aria-accordion-panel>
+            <p>When focus is on an accordion header for a collapsed panel, activating the accordion header <code>button</code> trigger will expand the associated panel. If another panel is expanded, this will collapse that panel.</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Example 2: Only one panel opened at a time, but all may be closed. The second panel is opened by default.</h2>
+        <div data-aria-accordion data-aria-accordion-allow-toggle data-aria-accordion-open-default="2">
+          <h3 data-aria-accordion-heading>Accordion Header 4</h3>
+          <div data-aria-accordion-panel>
+            <p>Allow for each toggle to both open and close its section. Makes it possible for all sections to be closed. Assumes only one section may be open.</p>
+            <p>This is accomplished via the <code>data-aria-accordion-allow-toggle</code>, set on the parent accordion container.</p>
+          </div>
+          <h3 data-aria-accordion-heading>Accordion Header 5</h3>
+          <div data-aria-accordion-panel>
+            <p>This panel is set to be opened by default, when this particular accordion renders. This is accomplished via the <code>data-aria-accordion-open-default="2"</code> attribute, set on the parent accordion container.</p>
+          </div>
+          <h3 data-aria-accordion-heading>Accordion Header 6</h3>
+          <div data-aria-accordion-panel>
+            <p>When focus is on an accordion header for a collapsed panel, activating the accordion header <code>button</code> trigger will expand the associated panel. If another panel is expanded, this will collapse that panel.</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Example 3: No default opened panel. Ability to open multiple panels at a time. The last panel contains a nested accordion example.</h2>
+        <div data-aria-accordion data-aria-accordion-allow-multiple>
+          <h3 data-aria-accordion-heading>Accordion Header 7</h3>
+          <div data-aria-accordion-panel>
+            <p>Allow for multiple accordion sections to be expanded at the same time. Assumes each toggle to both open and close otherwise the toggle on open sections would be disabled.</p>
+          </div>
+          <h3 data-aria-accordion-heading>Accordion Header 8</h3>
+          <div data-aria-accordion-panel>
+            <p>This is accomplished via the <code>data-aria-accordion-allow-multiple</code> attribute option, set on the parent accordion container.</p>
+          </div>
+          <h3 data-aria-accordion-heading>Accordion Header 9</h3>
+          <div data-aria-accordion-panel>
+            <p>When focus is on an accordion header for a collapsed panel, activating the accordion header <code>button</code> trigger will expand the associated panel. If (an)other panel(s) is (are) opened, this (those) one will keep its (their) expanded state.</p>
+          </div>
+          <h3 data-aria-accordion-heading>Accordion Header 10</h3>
+          <div data-aria-accordion-panel>
+            <p>Sometimes accordions are desired within accordions. Typically this should be advised against, as it can create a more complex UX than should really be necessary.</p>
+            <div data-aria-accordion data-aria-accordion-allow-toggle data-aria-accordion-panel-transition>
+              <h4 data-aria-accordion-heading>Accordion Header 10.1</h4>
+              <div data-aria-accordion-panel>
+                <p>As an example of how nested accordions need to be considered their own component, and not related to the parent accordion panel set, this accordion functions independently and differently than the parent accordion.</p>
+              </div>
+              <h4 data-aria-accordion-heading>Accordion Header 10.2</h4>
+              <div data-aria-accordion-panel>
+                <p>Only a single panel of this accordion can be opened at time, but this accordion also allows for the ability to collapse all panels.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Example 4: Accordion contained within an <code>&lt;ol&gt;</code> list element, with only one panel opened at a time, but all may be closed.</h2>
+        <ol data-aria-accordion data-aria-accordion-custom-class="ordered-list" data-aria-accordion-allow-toggle>
+          <li>
+            <h3 data-aria-accordion-heading>Accordion Header 11</h3>
+            <div data-aria-accordion-panel>
+              <p>Allow for each toggle to both open and close its section. Makes it possible for all sections to be closed. Assumes only one section may be open.</p>
+            </div>
+          </li>
+          <li>
+            <h3 data-aria-accordion-heading>Accordion Header 12</h3>
+            <div data-aria-accordion-panel>
+              <p>When focus is on an accordion header for a collapsed panel, activating the accordion header <code>button</code> trigger will expand the associated panel. If another panel is expanded, this will collapse that panel.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+    </main> <!-- /.content-area -->
+    <script src="../../dist/accordion/js/accordion.min.js"></script>
+  </body>
+</html>

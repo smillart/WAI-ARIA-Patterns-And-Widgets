@@ -1,0 +1,77 @@
+.aria-accordion {
+  margin: 0;
+  padding: 0;
+  border: 0.125rem solid hsl(0, 0%, 82%);
+  border-radius: 0.4375rem;
+}
+.aria-accordion > * + *,
+.aria-accordion > li > * + * {
+  border-top: 1px solid hsl(0, 0%, 82%);
+}
+.aria-accordion > li {
+  margin: 0;
+  list-style: none;
+}
+.aria-accordion > li:before {
+	content: '\200B';
+	position: absolute;
+}
+.aria-accordion__heading {
+  margin: 0;
+  padding: 0;
+}
+.aria-accordion__heading > button {
+  background: none;
+  color: hsl(0, 0%, 13%);
+  display: block;
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0;
+  padding: 1em 1.5em;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  border-style: none;
+}
+.aria-accordion__heading > button::-moz-focus-inner {
+  border: 0;
+}
+.aria-accordion__heading:first-child > button {
+  border-radius: 0.3125rem 0.3125rem 0 0;
+}
+.aria-accordion__heading > button::after {
+  content: '';
+  position: absolute;
+  right: 2em;
+  top: 50%;
+  border: solid #9e9e9e;
+  border-width: 0 0.125rem 0.125rem 0;
+  height: 0.5rem;
+  pointer-events: none;
+  transform: translateY(-60%) rotate(45deg);
+  width: 0.5rem;
+}
+.aria-accordion__heading > button:hover {
+  color: #005a9c;
+  background: hsl(216, 94%, 94%);
+}
+.aria-accordion__heading > button:hover:after {
+  border-color:  #005a9c;
+}
+.aria-accordion__heading > button[aria-expanded="true"] {
+  color: #005a9c;
+  background: hsl(216, 94%, 94%);
+}
+.aria-accordion__heading > button[aria-expanded="true"]::after {
+  border-color:  #005a9c;
+  transform: translateY(-50%) rotate(-135deg);
+}
+.aria-accordion__heading > button[aria-disabled="true"]:hover { cursor: not-allowed; }
+.aria-accordion__panel {
+  margin: 0;
+  padding: 1rem 1.5rem;
+}
+.aria-accordion__panel--transition {}
+.aria-accordion__panel p:last-child {
+  margin-bottom: 0;
+}
