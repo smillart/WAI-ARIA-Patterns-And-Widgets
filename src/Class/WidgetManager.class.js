@@ -3,7 +3,7 @@
  * JavaScript widget manager class which provides common, repetitive and useful operations.
  *
  * Author: Sébastien Millart.
- * Version: 1.0
+ * Version: 1.0.1
  * Licence: https://github.com/smillart/WAI-ARIA-Patterns-And-Widgets/blob/master/LICENSE
  */
 
