@@ -101,7 +101,7 @@ class Accordion extends WidgetManager {
       this.domNode.setAttribute('id', 'acc-' + this.idCounter + '-' + this.index);
     }
 
-    // Setup the '.accordion' default class for styling.
+    // Setup the '.aria-accordion' default class for styling.
     this.addClass(this.domNode, this.nodeClass);
 
     // Get all panels & headings of an accordion pattern based on a specific ID > direct
@@ -152,7 +152,7 @@ class Accordion extends WidgetManager {
    */
   setupPanels() {
     this.panels.forEach(function (panel, index) {
-      // Setup both '.accordion__panel' class for styling and ID.
+      // Setup both '.aria-accordion__panel' class for styling and ID.
       this.addClass(panel, this.accordionPanelClass);
       panel.setAttribute('id', this.domNode.id + '-panel-' + (index + 1));
 
@@ -173,7 +173,7 @@ class Accordion extends WidgetManager {
    */
   setupHeadingButton() {
     this.headings.forEach(function (heading, index) {
-      // Setup the '.accordion__heading' class for styling.
+      // Setup the '.aria-accordion__heading' class for styling.
       this.addClass(heading, this.accordionHeadingClass);
 
       // Setup new heading buttons.
