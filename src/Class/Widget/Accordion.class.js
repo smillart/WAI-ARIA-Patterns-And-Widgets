@@ -3,7 +3,7 @@
  * "Accordion" design pattern that implements ARIA Authoring Practices.
  *
  * Author: Sébastien Millart.
- * Version: 1.0.1
+ * Version: 1.0.x
  * Licence: https://github.com/smillart/WAI-ARIA-Patterns-And-Widgets/blob/master/LICENSE
  */
 
@@ -186,7 +186,7 @@ class Accordion extends WidgetManager {
       // If less than 7 panels (contextualized that can be expanded at the same time),
       // those have role 'region' and 'aria-labelledby' with a value that refers to
       // this heading button.
-      if (((this.allowMultiple && this.panels.length < 7) || !this.allowMultiple) && button.domNode.hasAttribute('id')) {
+      if (((this.allowMultiple && this.panels.length < 7) || !this.allowMultiple) && button.domNode.hasAttribute('aria-controls')) {
         document.getElementById(button.domNode.getAttribute('aria-controls')).setAttribute('role', 'region');
         document.getElementById(button.domNode.getAttribute('aria-controls')).setAttribute('aria-labelledby', button.domNode.id);
       }

@@ -4,7 +4,7 @@
  * Accordion (Sections With Show/Hide Functionality).
  *
  * Author: Sébastien Millart.
- * Version: 1.0.1
+ * Version: 1.0.x
  * Licence: https://github.com/smillart/WAI-ARIA-Patterns-And-Widgets/blob/master/LICENSE
  *
  * The following javascript implements ARIA Authoring Practices for an accordion,
