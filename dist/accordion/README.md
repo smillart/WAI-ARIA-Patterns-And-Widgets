@@ -9,7 +9,7 @@ An accordion is a vertically stacked set of interactive headings that each conta
 
 ## Minimum Required Mark-up
 
-The approach is with [Progressive Enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement) (PE) in mind. The principle is to start with a rock-solid markup foundation (as shown here after) and then adding enhancements to it. Any additional markup elements (e.g. `<button>`) or attributes (e.g. `class="aria-accordion ... aria-accordion__heading ... aria-accordion__panel"`, `id`, `role`, `aria-`...) that do not exist in the found required markup will be generated when the script/page loads.
+Accordions are enhanced from a basic HTML pattern:
 
 ```html
 <div data-aria-accordion>
@@ -19,6 +19,8 @@ The approach is with [Progressive Enhancement](https://developer.mozilla.org/en-
   </div>
 </div>
 ```
+
+The approach is with [Progressive Enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement) (PE) in mind. The principle is to start with a rock-solid markup foundation (as shown here before) and then adding enhancements to it. Any additional markup elements (e.g. `<button>`) or attributes (e.g. `class="aria-accordion ... aria-accordion__heading ... aria-accordion__panel"`, `id`, `role`, `aria-`...) that do not exist in the found required markup will be generated when the script/page loads.
 
 ## Minimum Required Styles
 
