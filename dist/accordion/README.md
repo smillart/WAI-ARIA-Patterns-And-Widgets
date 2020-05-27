@@ -9,7 +9,7 @@ An accordion is a vertically stacked set of interactive headings that each conta
 
 ## Minimum Required Mark-up
 
-Accordions are enhanced from a basic HTML pattern:
+The approach is with [Progressive Enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement) (PE) in mind. The principle is to start with a rock-solid markup foundation (as shown here after) and then adding enhancements to it. Any additional markup elements (e.g. `<button>`) or attributes (e.g. `class="aria-accordion ... aria-accordion__heading ... aria-accordion__panel"`, `id`, `role`, `aria-`...) that do not exist in the found required markup will be generated when the script/page loads.
 
 ```html
 <div data-aria-accordion>
@@ -22,7 +22,7 @@ Accordions are enhanced from a basic HTML pattern:
 
 ## Minimum Required Styles
 
-To ensure legacy browsers support hidden accordion panels need to define default styles:
+To ensure legacy browsers support hidden accordion panels need to define a default style. This style is included in the `css/accordion.min.css` CSS file.
 
 ```css
 /* For legacy browsers support */
