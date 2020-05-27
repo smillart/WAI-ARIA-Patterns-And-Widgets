@@ -1,1 +1,8 @@
-.aria-accordion__panel[hidden]{display:none}
+/* For legacy browsers support */
+.aria-accordion__panel[hidden] {
+  display: none;
+}
+
+/* For accordion panels with a transition effect */
+.aria-accordion__panel--transition {}
+.aria-accordion__panel--transition[hidden] {}
