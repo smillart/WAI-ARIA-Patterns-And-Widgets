@@ -3,7 +3,7 @@
  * JavaScript class which manages the "Accordion" behavior.
  *
  * Author: Sébastien Millart.
- * Version: 1.0.1
+ * Version: 1.0.x
  * Licence: https://github.com/smillart/WAI-ARIA-Patterns-And-Widgets/blob/master/LICENSE
  */
 
@@ -50,7 +50,7 @@ class AccordionController extends ControllerManager {
    * Handle the 'keydown' events which implements the 'EventListener' interface.
    */
   handleKeydown(event) {
-    console.log('[keydown]');
+    console.log(`[keydown]`);
     var flag = false;
 
     switch (event.keyCode) {

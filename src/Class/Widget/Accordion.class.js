@@ -21,20 +21,20 @@ class Accordion extends WidgetManager {
    * and define script meta-data
    */
   constructor(domNode, index) {
-    var msgPrefix = 'Accordion constructor argument domNode ';
-    var msgHeading = 'H2-H6 [data-aria-accordion-heading]';
-    var msgPanel = 'DIV [data-aria-accordion-panel]';
-    var headingDataAttribute = 'data-aria-accordion-heading';
-    var panelDataAttribute = 'data-aria-accordion-panel';
+    var headingDataAttribute = `data-aria-accordion-heading`;
+    var panelDataAttribute = `data-aria-accordion-panel`;
+    var msgPrefix = `Accordion constructor argument domNode`;
+    var msgHeading = `H2-H6 [${headingDataAttribute}]`;
+    var msgPanel = `DIV [${panelDataAttribute}]`;
 
     // Check whether domNode is a DOM element.
     if (!domNode instanceof Element) {
-      throw new TypeError(msgPrefix + 'is not a DOM Element.');
+      throw new TypeError(`${msgPrefix}is not a DOM Element.`);
     }
 
     // Check whether domNode has child elements.
     if (domNode.childElementCount === 0) {
-      throw new Error(msgPrefix + 'has no element children.');
+      throw new Error(`${msgPrefix} has no element children.`);
     }
 
     // Check whether domNode descendant elements are correct one:
@@ -50,8 +50,7 @@ class Accordion extends WidgetManager {
             (!dataElement.tagName.match(regex) || !dataElement.hasAttribute(headingDataAttribute)) && 
             (dataElement.tagName !== 'DIV' || !dataElement.hasAttribute(panelDataAttribute))) {
 
-            throw new Error(msgPrefix + 'has UL/OL descendant elements that do not match with ' 
-              + msgHeading + ' or ' + msgPanel + ' as required.');
+            throw new Error(`${msgPrefix} has UL/OL descendant elements that do not match with ${msgHeading} or ${msgPanel} as required.`);
           }
           dataElement = dataElement.nextElementSibling;
         }
@@ -61,18 +60,17 @@ class Accordion extends WidgetManager {
           (!childElement.tagName.match(regex) || !childElement.hasAttribute(headingDataAttribute)) && 
           (childElement.tagName !== 'DIV' || !childElement.hasAttribute(panelDataAttribute))) {
 
-          throw new Error(msgPrefix + 'has direct descendant elements that do not match with ' 
-            + msgHeading + ' or ' + msgPanel + ' as required.');
+          throw new Error(`${msgPrefix} has direct descendant elements that do not match with ${msgHeading} or ${msgPanel} as required.`);
         }
       }
       childElement = childElement.nextElementSibling;
     }
 
-    super(domNode, 'accordion');
-    this.accordionHeadingClass = this.nodeClass + '__heading';
-    this.accordionPanelClass = this.nodeClass + '__panel';
-    this.accordionHeading = '[' + headingDataAttribute + ']';
-    this.accordionPanel = '[' + panelDataAttribute + ']';
+    super(domNode, `accordion`);
+    this.accordionHeadingClass = `${this.nodeClass}__heading`;
+    this.accordionPanelClass = `${this.nodeClass}__panel`;
+    this.accordionHeading = `[${headingDataAttribute}]`;
+    this.accordionPanel = `[${panelDataAttribute}]`;
     this.buttons = [];
     this.headings;
     this.panels;
@@ -98,7 +96,7 @@ class Accordion extends WidgetManager {
 
     // Check for IDs and create one if needed for further use.
     if (!this.domNode.hasAttribute('id')) {
-      this.domNode.setAttribute('id', 'acc-' + this.idCounter + '-' + this.index);
+      this.domNode.setAttribute('id', `acc-${this.idCounter}-${this.index}`);
     }
 
     // Setup the '.aria-accordion' default class for styling.
@@ -109,20 +107,20 @@ class Accordion extends WidgetManager {
     // meant for the parent accordion, or vice-versa).
     //
     // If accordions are contained within an ol/ul, the selector needs to be different.
-    if (document.querySelectorAll('#' + this.domNode.id + ' > li').length) {
-      this.headings = document.querySelectorAll('#' + this.domNode.id + ' > li > ' + this.accordionHeading);
-      this.panels = document.querySelectorAll('#' + this.domNode.id + ' > li > ' + this.accordionPanel);
+    if (document.querySelectorAll(`#${this.domNode.id} > li`).length) {
+      this.headings = document.querySelectorAll(`#${this.domNode.id} > li > ${this.accordionHeading}`);
+      this.panels = document.querySelectorAll(`#${this.domNode.id} > li > ${this.accordionPanel}`);
     }
     else {
-      this.headings = document.querySelectorAll('#' + this.domNode.id + ' > ' + this.accordionHeading);
-      this.panels = document.querySelectorAll('#' + this.domNode.id + ' > ' + this.accordionPanel);
+      this.headings = document.querySelectorAll(`#${this.domNode.id} > ${this.accordionHeading}`);
+      this.panels = document.querySelectorAll(`#${this.domNode.id} > ${this.accordionPanel}`);
     }
 
     // Check for 'data-aria-accordion-custom-class' option: If different behaviors are
     // needed on a same page, a custom class can be added on the main accordion container
     // that will be used as modifier class.
     this.customClass = this.getSetting('custom-class', false);
-    if (this.customClass) this.addClass(this.domNode, this.nodeClass + '--' + this.customClass);
+    if (this.customClass) this.addClass(this.domNode, `${this.nodeClass}--${this.customClass}`);
 
 
     // Check for 'data-aria-accordion-open-default' option: Is there a default opened panel?
@@ -154,13 +152,13 @@ class Accordion extends WidgetManager {
     this.panels.forEach(function (panel, index) {
       // Setup both '.aria-accordion__panel' class for styling and ID.
       this.addClass(panel, this.accordionPanelClass);
-      panel.setAttribute('id', this.domNode.id + '-panel-' + (index + 1));
+      panel.setAttribute('id', `${this.domNode.id}-panel-${index + 1}`);
 
       // If accordion panels are meant to transition, apply this inline style. This is to
       // help mitigate a quick flash of CSS being applied to the no-js styling, and having
       // an unwanted transition on initial page load.
       if (this.panelTransition) {
-        this.addClass(panel, this.accordionPanelClass + '--transition', false);
+        this.addClass(panel, `${this.accordionPanelClass}--transition`, false);
       }
     }, this);
   }

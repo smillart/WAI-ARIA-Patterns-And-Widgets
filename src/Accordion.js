@@ -19,7 +19,7 @@
 
   // Initialize Accordions
   window.addEventListener('DOMContentLoaded', function (event) {
-    document.querySelectorAll('[data-aria-accordion]').forEach(function (accordion, index) {
+    document.querySelectorAll(`[data-aria-accordion]`).forEach(function (accordion, index) {
       var acc = new Accordion(accordion, index);
     });
   });
