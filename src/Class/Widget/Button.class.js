@@ -3,7 +3,7 @@
  * JavaScript class which manages the "Button" behavior.
  *
  * Author: Sébastien Millart.
- * Version: 1.0.1
+ * Version: 1.0.x
  * Licence: https://github.com/smillart/WAI-ARIA-Patterns-And-Widgets/blob/master/LICENSE
  */
 
@@ -38,7 +38,7 @@ class Button {
     // an associated element.
     if (this.targetID && document.getElementById(this.targetID)) {
       this.domNode.setAttribute('aria-controls', this.targetID);
-      this.domNode.setAttribute('id', this.targetID + '-trigger');
+      this.domNode.setAttribute('id', `${this.targetID}-trigger`);
     }
   }
 }

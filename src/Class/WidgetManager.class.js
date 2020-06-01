@@ -3,7 +3,7 @@
  * JavaScript widget manager class which provides common, repetitive and useful operations.
  *
  * Author: Sébastien Millart.
- * Version: 1.0.1
+ * Version: 1.0.x
  * Licence: https://github.com/smillart/WAI-ARIA-Patterns-And-Widgets/blob/master/LICENSE
  */
 
@@ -20,7 +20,7 @@ class WidgetManager {
    */
   constructor(domNode, nodeClass) {
     this.domNode = domNode;
-    this.nodeClass = 'aria-' + nodeClass;
+    this.nodeClass = `aria-${nodeClass}`;
   }
 
   /*
@@ -30,10 +30,10 @@ class WidgetManager {
    * which will be transform to CSS class (if forced).
    */
   hasSetting(dataAttribute, forceClass = true) {
-    var setting = this.domNode.hasAttribute('data-' + this.nodeClass + '-' + dataAttribute);
+    var setting = this.domNode.hasAttribute(`data-${this.nodeClass}-${dataAttribute}`);
     if (setting) {
-      this.domNode.removeAttribute('data-' + this.nodeClass + '-' + dataAttribute);
-      if (forceClass) this.addClass(this.domNode, this.nodeClass + '--' + dataAttribute, false);
+      this.domNode.removeAttribute(`data-${this.nodeClass}-${dataAttribute}`);
+      if (forceClass) this.addClass(this.domNode, `${this.nodeClass}--${dataAttribute}`, false);
     }
     return setting;
   }
@@ -45,10 +45,10 @@ class WidgetManager {
    * which will be transform to CSS class (if forced).
    */
   getSetting(dataAttribute, forceClass = true) {
-    if (this.domNode.hasAttribute('data-' + this.nodeClass + '-' + dataAttribute)) {
-      var setting = this.domNode.getAttribute('data-' + this.nodeClass + '-' + dataAttribute);
-      this.domNode.removeAttribute('data-' + this.nodeClass + '-' + dataAttribute);
-      if (forceClass && setting !== 'none') this.addClass(this.domNode, this.nodeClass + '--' + dataAttribute, false);
+    if (this.domNode.hasAttribute(`data-${this.nodeClass}-${dataAttribute}`)) {
+      var setting = this.domNode.getAttribute(`data-${this.nodeClass}-${dataAttribute}`);
+      this.domNode.removeAttribute(`data-${this.nodeClass}-${dataAttribute}`);
+      if (forceClass && setting !== 'none') this.addClass(this.domNode, `${this.nodeClass}--${dataAttribute}`, false);
       return setting;
     }
   }
@@ -60,7 +60,7 @@ class WidgetManager {
    */
   addClass(element, className, forceRemove = true) {
     if (typeof className === 'string') {
-      var dataAttribute = 'data-' + className.replace(/__|--/g,'-');
+      var dataAttribute = `data-${className.replace(/__|--/g,`-`)}`;
       if (element) {
         element.classList.add(className);
         if (element.hasAttribute(dataAttribute) && forceRemove) element.removeAttribute(dataAttribute);
