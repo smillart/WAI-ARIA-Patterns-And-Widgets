@@ -33,7 +33,8 @@
   padding-top:0;
   padding-bottom: 0;
   overflow: hidden;
-  visibility: visible;
+  visibility: hidden;
+  opacity: 0;
   /* persist visibility value from animation */
   animation: 800ms delay-visibility;
   animation: 900ms delay-padding-collapse;
