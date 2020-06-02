@@ -33,7 +33,7 @@ To ensure legacy browsers support hidden accordion panels need to use the follow
 }
 ```
 
-Other default styles have been defined for accordion panels where **CSS transitions** can be applied from hidden to revealed state (and vice versa). These styles are included in the `css/accordion.min.css` CSS file. The `max-height` technique has been used but there are others (`transform: scaleY()`, Flexbox ...). Feel free to use your own styles.
+Other default styles have been defined for accordion panels where **CSS transitions** can be applied from hidden to revealed state (and vice versa). These styles are included in the [`css/accordion.min.css`](css/accordion.min.css) CSS file. The `max-height` technique has been used but there are others (`transform: scaleY()`, Flexbox ...). Feel free to use your own styles.
 
 ## `data` attributes for accordions setting options
 
