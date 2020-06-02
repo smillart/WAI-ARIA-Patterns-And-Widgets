@@ -24,7 +24,7 @@
     padding-top 0.3s,
     padding-bottom 0.3s,
     opacity 0.5s;
-  overflow: visible;
+  overflow: auto;
   /* persist overflow value from animation */
   animation: 800ms delay-overflow;
   animation: 900ms delay-padding-expanding;
