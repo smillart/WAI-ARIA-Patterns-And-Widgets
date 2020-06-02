@@ -33,11 +33,6 @@
   padding-top:0;
   padding-bottom: 0;
   overflow: hidden;
-  -webkit-transition: max-height 800ms ease-out;
-  -moz-transition: max-height 800ms ease-out;
-  -ms-transition: max-height 800ms ease-out;
-  -o-transition: max-height 800ms ease-out;
-  transition: max-height 800ms ease-out;
   visibility: visible;
   /* persist visibility value from animation */
   animation: 800ms delay-visibility;
