@@ -35,31 +35,3 @@
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
-  /* persist visibility value from animation */
-  animation: 800ms delay-visibility;
-  animation: 900ms delay-padding-collapse;
-}
-
-@keyframes delay-visibility {
-  from {
-    visibility: visible;
-  }
-}
-
-@keyframes delay-overflow {
-  from {
-    overflow: hidden;
-  }
-}
-@keyframes delay-padding-collapse {
-  from {
-    padding-top:1rem;
-    padding-bottom:1rem;
-  }
-}
-@keyframes delay-padding-expanding {
-  from {
-    padding-top:0;
-    padding-bottom:0;
-  }
-}
