@@ -24,7 +24,7 @@ The approach is with [Progressive Enhancement](https://developer.mozilla.org/en-
 
 ## Minimum Required Styles
 
-To ensure legacy browsers support hidden accordion panels need to define a default style. This style is included in the `css/accordion.min.css` CSS file.
+To ensure legacy browsers support hidden accordion panels need to use the following CSS rule. Other default styles have been defined for accordion panels where **CSS transitions** can be applied from hidden to revealed state (and vice versa). These styles are included in the `css/accordion.min.css` CSS file. The `max-height` technique has been used but there are others (`transform: scaleY()`, Flexbox ...). Feel free to use your own styles.
 
 ```css
 /* For legacy browsers support */
