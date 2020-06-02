@@ -5,7 +5,6 @@
 
 /* For accordion panels with a transition effect */
 .aria-accordion__panel--transition {
-  display: block;
   max-height: 100vh;
   visibility: visible;
   -webkit-transition: max-height 800ms ease-in;
