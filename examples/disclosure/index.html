@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Progressively Enhanced Disclosure (Show/Hide) for Dynamic Content that implements ARIA Authoring Practices 1.1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script>
+      // Add 'js' to the HTML
+      document.documentElement.className = 'js';
+    </script>
+    <link rel="stylesheet" href="../../web/css/base.css" />
+    <link rel="stylesheet" href="css/disclosure.css" />
+    <link rel="stylesheet" href="../../dist/disclosure/css/disclosure.min.css" />
+  </head>
+  <body>
+    <main role="main">
+      <nav aria-label="Related Links">
+        <ul>
+          <li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#disclosure">Disclosure (Show/Hide) Design Pattern in WAI-ARIA Authoring Practices 1.1</a></li>
+          <li><a href="https://github.com/smillart/WAI-ARIA-Patterns-And-Widgets/blob/1.0.1/dist/disclosure">Disclosure Source Code for these Examples on GitHub</a></li>
+        </ul>
+      </nav>
+      <h1>Progressively Enhanced Disclosure (Show/Hide) for Dynamic Content that implements ARIA Authoring Practices 1.1</h1>
+      <p>The below example sections demonstrate the design pattern for disclosure. The visual design includes features intended to help users understand that the disclosure provides enhanced keyboard navigation functions.</p>
+      <p>Notice that when JavaScript disabled, each section retains an appropriate document structure and the content is completely accessible.</p>
+      <section>
+        <h2>Example 1: The default one.</h2>
+        <div data-aria-disclosure>
+          <p>The visual indication of expanded and collapsed states is synchronized with the value of <code>aria-expanded</code> using a CSS attribute selector and <code>:before</code> pseudo element that generates an arrow with the <code>content</code> property.</p>
+        </div>
+      </section>
+    </main> <!-- /.content-area -->
+    <script src="../../dist/disclosure/js/disclosure.min.js"></script>
+  </body>
+</html>
