@@ -12,6 +12,12 @@
  * content snippet, or thumbnail representing a section of content.
  */
 
+// Polyfills
+// @prepros-prepend Polyfills/Element.addEventListener.js
+// @prepros-prepend Polyfills/Element.classList.js
+// @prepros-prepend Polyfills/NodeList.forEach.js
+// @prepros-prepend Polyfills/Array.forEach.js
+
 // Concatenating files
 // @prepros-prepend Class/Widget/Accordion.class.js
 
