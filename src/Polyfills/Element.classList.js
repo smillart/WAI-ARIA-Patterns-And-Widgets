@@ -1,5 +1,5 @@
 /*
- * classList.js: Cross-browser full element.classList implementation.
+ * classList.js: Cross-browser full Element.classList implementation.
  * 1.1.20170427
  *
  * By Eli Grey, http://eligrey.com

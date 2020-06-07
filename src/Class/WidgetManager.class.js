@@ -7,9 +7,6 @@
  * Licence: https://github.com/smillart/WAI-ARIA-Patterns-And-Widgets/blob/master/LICENSE
  */
 
-// Polyfills
-// @prepros-prepend ../Polyfills/classList.js
-
 class WidgetManager {
 
   /**
