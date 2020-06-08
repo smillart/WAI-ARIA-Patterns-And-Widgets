@@ -20,9 +20,11 @@ Accordions are enhanced from a basic HTML pattern:
 </div>
 ```
 
+The approach is with [Progressive Enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement) (PE) in mind. The principle is to start with a rock-solid markup foundation (as shown here before) and then adding enhancements to it. Any additional markup elements (e.g. `<button>`) or attributes (e.g. `class="aria-accordion ... aria-accordion__heading ... aria-accordion__panel"`, `id`, `role`, `aria-`...) that do not exist in the found required markup will be generated when the script/page loads.
+
 ## Minimum Required Styles
 
-To ensure legacy browsers support hidden accordion panels need to define default styles:
+To ensure legacy browsers support hidden accordion panels need to use the following CSS rule:
 
 ```css
 /* For legacy browsers support */
@@ -30,6 +32,8 @@ To ensure legacy browsers support hidden accordion panels need to define default
   display: none;
 }
 ```
+
+Other default styles have been defined for accordion panels where **CSS transitions** can be applied from hidden to revealed state (and vice versa). These styles are included in the [`css/accordion.min.css`](css/accordion.min.css) CSS file. The `max-height` technique has been used but there are others (`transform: scaleY()`, Flexbox ...). Feel free to use your own styles.
 
 ## `data` attributes for accordions setting options
 

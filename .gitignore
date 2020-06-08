@@ -1,2 +1,3 @@
-# Ignore all configuration files
+# Ignore all Sass source and configuration files
+scss/
 *.config

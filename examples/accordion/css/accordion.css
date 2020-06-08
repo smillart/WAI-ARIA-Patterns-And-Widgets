@@ -71,7 +71,6 @@
   margin: 0;
   padding: 1rem 1.5rem;
 }
-.aria-accordion__panel--transition {}
 .aria-accordion__panel p:last-child {
   margin-bottom: 0;
 }

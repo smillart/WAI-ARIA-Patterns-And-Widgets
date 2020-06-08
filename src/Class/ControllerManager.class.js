@@ -3,7 +3,7 @@
  * JavaScript controller manager class which manages widgets behavior.
  *
  * Author: Sébastien Millart.
- * Version: 1.0.1
+ * Version: 1.0.5
  * Licence: https://github.com/smillart/WAI-ARIA-Patterns-And-Widgets/blob/master/LICENSE
  */
 
@@ -19,12 +19,12 @@ class ControllerManager {
     this.currentItem = currentItem;
     this.items = items;
     this.keyCode = Object.freeze({
-      'RETURN': 13,
-      'SPACE': 32,
-      'END': 35,
-      'HOME': 36,
-      'UP': 38,
-      'DOWN': 40
+      RETURN: 13,
+      SPACE: 32,
+      END: 35,
+      HOME: 36,
+      UP: 38,
+      DOWN: 40
     });
   }
 
