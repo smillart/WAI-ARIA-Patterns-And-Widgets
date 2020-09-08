@@ -3,7 +3,7 @@
  * JavaScript controller manager class which manages widgets behavior.
  *
  * Author: Sébastien Millart.
- * Version: 1.0.5
+ * Version: 1.0.6
  * Licence: https://github.com/smillart/WAI-ARIA-Patterns-And-Widgets/blob/master/LICENSE
  */
 
