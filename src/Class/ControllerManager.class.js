@@ -3,7 +3,7 @@
  * JavaScript controller manager class which manages widgets behavior.
  *
  * Author: Sébastien Millart.
- * Version: 1.0.x
+ * Version: 1.1.x
  * Licence: https://github.com/smillart/WAI-ARIA-Patterns-And-Widgets/blob/master/LICENSE
  */
 
@@ -78,5 +78,25 @@ class ControllerManager {
       index = this.items.indexOf(this.currentItem);
       this.items[index + 1].domNode.focus();
     }
+  }
+
+  /*
+   * @method showContent()
+   *
+   * Reveal the associated hidden content.
+   */
+  showContent(ariaState) {
+    this.currentItem.domNode.setAttribute(`aria-${ariaState}`, 'true');
+    document.getElementById(this.currentItem.domNode.getAttribute('aria-controls')).removeAttribute('hidden');
+  }
+
+  /*
+   * @method hideContent()
+   *
+   * Hide the associated visible content.
+   */
+  hideContent(ariaState) {
+    this.currentItem.domNode.setAttribute(`aria-${ariaState}`, 'false');
+    document.getElementById(this.currentItem.domNode.getAttribute('aria-controls')).setAttribute('hidden', '');
   }
 }
