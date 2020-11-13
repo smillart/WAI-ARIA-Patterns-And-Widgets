@@ -17,14 +17,16 @@
       <nav aria-label="Related Links">
         <ul>
           <li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#disclosure">Disclosure (Show/Hide) Design Pattern in WAI-ARIA Authoring Practices 1.1</a></li>
-          <li><a href="https://github.com/smillart/WAI-ARIA-Patterns-And-Widgets/blob/1.0.1/dist/disclosure">Disclosure Source Code for these Examples on GitHub</a></li>
+          <li><a href="https://github.com/smillart/WAI-ARIA-Patterns-And-Widgets/tree/master/dist/disclosure">Disclosure Source Code for these Examples on GitHub</a></li>
         </ul>
       </nav>
       <h1>Progressively Enhanced Disclosure (Show/Hide) for Dynamic Content that implements ARIA Authoring Practices 1.1</h1>
       <p>The below example sections demonstrate the design pattern for disclosure. The visual design includes features intended to help users understand that the disclosure provides enhanced keyboard navigation functions.</p>
       <p>Notice that when JavaScript disabled, each section retains an appropriate document structure and the content is completely accessible.</p>
       <section>
-        <h2>Example 1: The default one.</h2>
+        <h2>Example 1: The default one. Toggle the visibility of content.</h2>
+        <p>A <em>disclosure component</em> is the formal name for the pattern where you click a <code>button</code> to reveal or hide content.</p>
+        <p>This includes things like a <em>"Show more/Show less"</em> interaction for some descriptive text below a YouTube video (for example).</p>
         <div data-aria-disclosure>
           <p>The visual indication of expanded and collapsed states is synchronized with the value of <code>aria-expanded</code> using a CSS attribute selector and <code>:before</code> pseudo element that generates an arrow with the <code>content</code> property.</p>
         </div>
