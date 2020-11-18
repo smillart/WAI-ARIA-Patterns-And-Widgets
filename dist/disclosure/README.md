@@ -17,34 +17,35 @@ Disclosures are enhanced from a basic HTML pattern:
 </div>
 ```
 
-The approach is with [Progressive Enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement) (PE) in mind. The principle is to start with a rock-solid markup foundation (as shown here before) and then adding enhancements to it. Any additional markup elements (e.g. `<button>`) or attributes (e.g. `class="aria-disclosure ... aria-disclosure__content"`, `id`, `aria-`...) that do not exist in the found required markup will be generated when the script/page loads.
+The approach is with [Progressive Enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement) (PE) in mind. The principle is to start with a rock-solid markup foundation (as shown here before) and then adding enhancements to it. Any additional markup elements (e.g. `<button>`) or attributes (e.g. `class="aria-disclosure ... aria-disclosure__content"`, `id`, `aria-[...]`, ...) that do not exist in the found required markup will be generated when the script/page loads.
 
 ## Minimum Required Styles
 
-To ensure legacy browsers support hidden disclosure content need to use the following CSS rule:
+To ensure legacy browsers support hidden disclosure contents need to use the following CSS rule (which are included in the [`/dist/css/aria-required.min.css`](../css/aria-required.min.css) CSS file):
 
 ```css
 /* For legacy browsers support */
-.aria-disclosure__content[hidden] {
+[class*=aria-][hidden] {
   display: none;
 }
 ```
 
-Other default styles have been defined for accordion panels where **CSS transitions** can be applied from hidden to revealed state (and vice versa). These styles are included in the [`css/disclosure-transition.min.css`](css/disclosure-transition.min.css) CSS file. The `max-height` technique has been used but there are others (`transform: scaleY()`, Flexbox ...). Feel free to use your own styles.
+Other default (non mandatory) styles have been defined for disclosure contents where **CSS transitions** can be applied from hidden to revealed state (and vice versa). These styles are included in the [`/dist/css/aria-transition.min.css`](../css/aria-transition.min.css) CSS file. The `max-height` technique has been used but there are others (`transform: scaleY()`, Flexbox ...). Feel free to use your own styles.
 
 ## `data` attributes for disclosures setting options
 
 | `data`&nbsp;Attribute&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Usage |
 |:--|:--|
 | **`data-aria-disclosure`** | Default required implementation. The section of content will be collapsed at all times when the script/page (re)loads. |
-| **`data-aria-disclosure-custom-class`** | Allow to add a custom class on the disclosure main container to be able to define a specific look and feel. |
-| **`data-aria-disclosure-button-label`** | Allow you to choose a custom label to set for the disclosure button. By default, it will use "Toggle Content" as button label. |
-| **`data-aria-disclosure-open-default`** | It will keep opened the section of content by default. |
-| **`data-aria-disclosure-transition`** | Will add a modifier class to each section of content where CSS transitions can be applied from hidden to revealed state. |
+| **`data-aria-disclosure-open-default`** | Using this option will keep opened (expanded) the section of content when the script/page (re)loads. |
+| **`data-aria-disclosure-custom-class`** | If different behaviors are needed on a same page, a custom class can be added on the main disclosure container that will be used as modifier class. |
+| **`data-aria-disclosure-button-label`** | Allow you to choose a custom label to set for the disclosure button. By default, it will use *"Toggle Content"* as button label. |
+| **`data-aria-disclosure-transition`** | Will add a modifier class to each section of content where CSS transitions can be applied from hidden to revealed state (and vice versa). |
 
 ## Keyboard Interaction
 
 | Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Function |
 |:--|:--|
-| `Tab` | Moves keyboard focus to the disclosure button. |
+| `Tab` | Moves keyboard focus to the disclosure button or to the next focusable element. |
+| `Shift` + `Tab` | Moves keyboard focus to the disclosure button or to the previous focusable element. |
 | `Space` or `Enter` | Activates the disclosure button, which toggles the visibility of the section of content. |
