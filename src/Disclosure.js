@@ -13,6 +13,9 @@
  * will display additional content.
  */
 
+// Polyfills
+// @prepros-prepend Polyfills/NodeList.forEach.js
+
 // Concatenating files
 // @prepros-prepend Class/Widget/Disclosure.class.js
 
