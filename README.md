@@ -10,6 +10,23 @@ This section provide common accessible rich internet application patterns and wi
    An accordion is a vertically stacked set of interactive headings that each contain a title, content snippet, or thumbnail representing a section of content. The headings function as controls that enable users to reveal or hide their associated sections of content.
 - **...**
 
+## WAI-ARIA widgets CDN delivery
+
+When you only need to include individual (or combine multiple) widget's compiled CSS or JS, you can use [jsDelivr](https://www.jsdelivr.com/). **jsDelivr** has an API for developers, no traffic limits and is accessible worldwide.
+
+```html
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/smillart/WAI-ARIA-Patterns-And-Widgets@1.1.0/dist/css/aria-required.min.css">
+
+<!-- Load any WAI-ARIA widget release -->
+<script src="https://cdn.jsdelivr.net/gh/smillart/WAI-ARIA-Patterns-And-Widgets@1.1.0/dist/accordion/js/accordion.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/smillart/WAI-ARIA-Patterns-And-Widgets@1.1.0/dist/disclosure/js/disclosure.min.js"></script>
+
+<!-- Or combine multiple CSS files and WAI-ARIA widgets -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/smillart/WAI-ARIA-Patterns-And-Widgets@1.1.0/dist/css/aria-required.min.css,gh/smillart/WAI-ARIA-Patterns-And-Widgets@1.1.0/dist/css/aria-transition.min.css">
+<script src="https://cdn.jsdelivr.net/combine/gh/smillart/WAI-ARIA-Patterns-And-Widgets@1.1.0/dist/accordion/js/accordion.min.js,gh/smillart/WAI-ARIA-Patterns-And-Widgets@1.1.0/dist/disclosure/js/disclosure.min.js"></script>
+```
+
 ## Browser and Assistive Technology Support
 
 JavaScript and CSS is written to be compatible with the most recent version of Chrome, Firefox, Internet Explorer, and Safari at the time of writing. In particular, some JavaScript and CSS may not function correctly in Internet Explorer version 9 or earlier.
