@@ -10,6 +10,33 @@ This section provide common accessible rich internet application patterns and wi
    An accordion is a vertically stacked set of interactive headings that each contain a title, content snippet, or thumbnail representing a section of content. The headings function as controls that enable users to reveal or hide their associated sections of content.
 - **...**
 
+## Widgets Delivery (CDN)
+
+### Load any widget release
+
+When you only need to include individual widget's compiled CSS or JS, you can use [jsDelivr](https://www.jsdelivr.com/). **jsDelivr** has an API for developers, no traffic limits and is accessible worldwide.
+
+```html
+<!-- CSS Required styles -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/smillart/WAI-ARIA-Patterns-And-Widgets@1.1.0/dist/css/aria-required.min.css">
+
+<!-- Load any JS Widget release -->
+<script src="https://cdn.jsdelivr.net/gh/smillart/WAI-ARIA-Patterns-And-Widgets@1.1.0/dist/accordion/js/accordion.min.js"></script>
+```
+
+### Combine multiple files
+
+The combine endpoint allows you to load several files from GitHub endpoints in one request. All features that work for individual files work here as well. All combined files come with source maps and can be easily used during development.
+
+```html
+<!-- CSS Required & Transition styles -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/smillart/WAI-ARIA-Patterns-And-Widgets@1.1.0/dist/css/aria-required.min.css,gh/smillart/WAI-ARIA-Patterns-And-Widgets@1.1.0/dist/css/aria-transition.min.css">
+
+<!-- Load multiple JS Widgets -->
+<script src="https://cdn.jsdelivr.net/combine/gh/smillart/WAI-ARIA-Patterns-And-Widgets@1.1.0/dist/accordion/js/accordion.min.js,gh/smillart/WAI-ARIA-Patterns-And-Widgets@1.1.0/dist/disclosure/js/disclosure.min.js"></script>
+```
+**Note:** Combining large/many files can take several seconds. However, **jsDelivr** stores all generated files in its permanent storage, so this delay only applies to the first few requests.
+
 ## Browser and Assistive Technology Support
 
 JavaScript and CSS is written to be compatible with the most recent version of Chrome, Firefox, Internet Explorer, and Safari at the time of writing. In particular, some JavaScript and CSS may not function correctly in Internet Explorer version 9 or earlier.
