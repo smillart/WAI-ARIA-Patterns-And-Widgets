@@ -30,8 +30,9 @@ class Disclosure extends WidgetManager {
 
     super(domNode, `disclosure`);
     this.container;
+    this.controller;
+    this.links = [];
     this.buttonLabel;
-    this.buttons = [];
     this.customClass;
     this.openDefault;
     this.disclosureTransition;
@@ -93,19 +94,18 @@ class Disclosure extends WidgetManager {
     this.addClass(this.container, this.nodeClass);
     if (this.customClass) this.addClass(this.container, `${this.nodeClass}--${this.customClass}`);
 
-    // Setup new disclosure button.
-    var button = new Button(this.buttonLabel, this.domNode.id);
-    this.buttons.push(button);
-    this.container.appendChild(button.domNode);
-
-    // Insert the main disclosure container to the DOM and append the toggled
-    // content as a child.
+    // Insert the main disclosure container to the DOM and append
+    // the disclosuse section of content as a child.
     this.domNode.parentNode.insertBefore(this.container, this.domNode);
     this.container.appendChild(this.domNode);
 
+    // Setup new disclosure `button` element.
+    this.controller = new Button(this.buttonLabel, this.domNode.id);
+    this.container.insertBefore(this.controller.domNode, this.domNode);
+
     // Create new disclosure controller using the button as trigger.
     // Add 'aria-expanded' attributes if appropriate.
-    var trigger = new DisclosureController(button, this);
+    var trigger = new DisclosureController(this.controller.domNode, this);
     trigger.toggleContent();
   }
 }
