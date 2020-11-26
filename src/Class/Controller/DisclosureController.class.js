@@ -18,9 +18,8 @@ class DisclosureController extends ControllerManager {
    * Local object for method references
    * and define script meta-data
    */
-  constructor(buttonObj, disclosureObj) {
-    super(buttonObj, disclosureObj.buttons);
-    this.trigger = this.currentItem.domNode;
+  constructor(controller, disclosureObj) {
+    super(controller, disclosureObj.links);
     this.disclosure = disclosureObj;
     this.bindEvents();
   }
@@ -28,10 +27,10 @@ class DisclosureController extends ControllerManager {
   /**
    * @method bindEvents()
    *
-   * Initialize event listener on focusable trigger buttons.
+   * Initialize event listener on interactive elements.
    */
   bindEvents() {
-    this.trigger.addEventListener('click', this.handleClick.bind(this));
+    this.currentItem.addEventListener('click', this.handleClick.bind(this));
   }
 
   /*
@@ -49,17 +48,17 @@ class DisclosureController extends ControllerManager {
    * Expand/Collapse the associated hidden/visible content.
    */
   toggleContent() {
-    if (this.trigger.hasAttribute('aria-expanded')) {
+    if (this.currentItem.hasAttribute('aria-expanded')) {
       // Check if the associated content is expanded.
-      var isExpanded = this.trigger.getAttribute('aria-expanded') == 'true';
+      var isExpanded = this.currentItem.getAttribute('aria-expanded') == 'true';
 
       if (isExpanded) {
-        // Set `false` as the expanded state for the triggered button
+        // Set `false` as the expanded state for the (button) controller
         // and collapse the associated content.
         this.hideContent('expanded');
       }
       else {
-        // Set `true` as the expanded state for the triggered button
+        // Set `true` as the expanded state for the (button) controller
         // and expand the associated content.
         this.showContent('expanded');
       }
@@ -68,13 +67,13 @@ class DisclosureController extends ControllerManager {
       // Set the disclosure widget to have the appropriately expand/collapse state:
       // Opened by default.
       if (this.disclosure.openDefault) {
-        // Set `true` as the initial expanded state for the triggered button
+        // Set `true` as the initial expanded state for the (button) controller
         // and expand the associated content.
         this.showContent('expanded');
       }
       // Or, closed by default.
       else {
-        // Set `false` as the initial expanded state for the triggered button
+        // Set `false` as the initial expanded state for the (button) controller
         // and collapse the associated content.
         this.hideContent('expanded');
       }
