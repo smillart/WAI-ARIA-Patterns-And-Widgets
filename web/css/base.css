@@ -69,8 +69,8 @@ button,
   font-family: inherit;
   font-style: inherit;
 }
-button:focus,
-[type="button"]:focus {
+button[aria-controls]:focus,
+[type="button"][aria-controls]:focus {
   outline: 0.1875rem solid hsl(216, 94%, 73%);
   outline-offset: 0.1875rem;
   z-index: 10;
