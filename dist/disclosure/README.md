@@ -39,6 +39,7 @@ Other default (non mandatory) styles have been defined for disclosure contents w
 | **`data-aria-disclosure`** | Default required implementation. The section of content will be collapsed at all times when the script/page (re)loads. |
 | **`data-aria-disclosure-open-default`** | Using this option will keep opened (expanded) the section of content when the script/page (re)loads. |
 | **`data-aria-disclosure-custom-class`** | If different behaviors are needed on a same page, a custom class can be added on the main disclosure container that will be used as modifier class. |
+| **`data-aria-disclosure-controller`** | Allow you to identify an existing `button` element which is meant to be used as the disclosure controller. With an `id` as value, it will refer to this existing `button` element. **e.g.** `data-aria-disclosure-controller="dis-controller-id"` will identify the `<button id="dis-controller-id" ...>...</button>` element. |
 | **`data-aria-disclosure-button-label`** | Allow you to choose a custom label to set for the disclosure button. By default, it will use *"Toggle Content"* as button label. |
 | **`data-aria-disclosure-transition`** | Will add a modifier class to each section of content where CSS transitions can be applied from hidden to revealed state (and vice versa). |
 
