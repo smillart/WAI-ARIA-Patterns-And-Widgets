@@ -25,8 +25,7 @@
       <p>Notice that when JavaScript disabled, each section retains an appropriate document structure and the content is completely accessible.</p>
       <section>
         <h2>Example 1: The default one. Toggle the visibility of content.</h2>
-        <p>A <em>disclosure component</em> is the formal name for the pattern where you click a <code>button</code> to reveal or hide content.</p>
-        <p>This includes things like a <em>"Show more/Show less"</em> interaction for some descriptive text below a YouTube video (for example).</p>
+        <p>A <em>disclosure component</em> is the formal name for the pattern where you click a <code>button</code> to reveal or hide content. This includes things like a <em>"Show more/Show less"</em> interaction for some descriptive text below a YouTube video (for example).</p>
         <div data-aria-disclosure>
           <p>The visual indication of expanded and collapsed states is synchronized with the value of <code>aria-expanded</code> using a CSS attribute selector and <code>:before</code> pseudo element that generates an arrow with the <code>content</code> property.</p>
         </div>
@@ -37,8 +36,8 @@
         <p>Remember that when you choose to use your own <code>button</code> element as triggering element, the reading order in a screen-reader which is based on the order of the HTML elements in the DOM (Document Object Model), has to keep the default tab order.</p>
         <p><button id="dis-trigger" class="button--disclosure">Toggle Content (from this existing <code>button</code> element)</button></p>
         <div data-aria-disclosure data-aria-disclosure-controller="dis-trigger">
-          <p>That's why new dynamic content has to be inserted into the DOM immediately following the element that was activated to trigger the script. The triggering element must be a <code>button</code> element (natively focusable and activatable).</p>
-          <p>Focus remains on the activated element and the new content, inserted after it, becomes the next thing in both the tab order and screen-reader reading order. This implementation is necessary to meet the WCAG 2.1 - <a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order">2.4.3: Focus Order</a> criterion.</p>
+          <p>That's why new dynamic content has to be inserted into the <abbr title="Document Object Model">DOM</abbr> immediately following the element that was activated to trigger the script. The triggering element must be a <code>button</code> element (natively focusable and activatable).</p>
+          <p>Focus remains on the activated element and the new content, inserted after it, becomes the next thing in both the tab order and screen-reader reading order. This implementation is necessary to meet the <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1 - <a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order">2.4.3: Focus Order</a> criterion.</p>
         </div>
       </section>
     </main> <!-- /.content-area -->
