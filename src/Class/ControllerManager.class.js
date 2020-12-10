@@ -3,7 +3,7 @@
  * JavaScript controller manager class which manages widgets behavior.
  *
  * Author: Sébastien Millart.
- * Version: 1.0.6
+ * Version: 1.1.x
  * Licence: https://github.com/smillart/WAI-ARIA-Patterns-And-Widgets/blob/master/LICENSE
  */
 
@@ -31,25 +31,25 @@ class ControllerManager {
   /*
    * @method setFocusToFirstItem()
    *
-   * Moves focus to first widget item.
+   * Moves focus to first 'item' element.
    */
   setFocusToFirstItem() {
-    this.items[0].domNode.focus();
+    this.items[0].focus();
   }
 
   /*
    * @method setFocusToLastItem()
    *
-   * Moves focus to last widget item.
+   * Moves focus to last 'item' element.
    */
   setFocusToLastItem() {
-    this.items[this.items.length - 1].domNode.focus();
+    this.items[this.items.length - 1].focus();
   }
 
   /*
    * @method setFocusToPreviousItem()
    *
-   * Moves focus to the previous wiget item.
+   * Moves focus to the previous 'item' element.
    */
   setFocusToPreviousItem() {
     var index;
@@ -59,14 +59,14 @@ class ControllerManager {
     }
     else {
       index = this.items.indexOf(this.currentItem);
-      this.items[index - 1].domNode.focus();
+      this.items[index - 1].focus();
     }
   }
 
   /*
    * @method setFocusToNextItem()
    *
-   * Moves focus to the next widget item.
+   * Moves focus to the next 'item' element.
    */
   setFocusToNextItem() {
     var index;
@@ -76,7 +76,29 @@ class ControllerManager {
     }
     else {
       index = this.items.indexOf(this.currentItem);
-      this.items[index + 1].domNode.focus();
+      this.items[index + 1].focus();
     }
+  }
+
+  /*
+   * @method showContent()
+   *
+   * Reveal the button associated hidden content.
+   */
+  showContent(ariaState, forceButton = false) {
+    var button = (forceButton) ? forceButton : this.currentItem;
+    button.setAttribute(`aria-${ariaState}`, 'true');
+    document.getElementById(button.getAttribute('aria-controls')).removeAttribute('hidden');
+  }
+
+  /*
+   * @method hideContent()
+   *
+   * Hide the button associated visible content.
+   */
+  hideContent(ariaState, forceButton = false) {
+    var button = (forceButton) ? forceButton : this.currentItem;
+    button.setAttribute(`aria-${ariaState}`, 'false');
+    document.getElementById(button.getAttribute('aria-controls')).setAttribute('hidden', '');
   }
 }

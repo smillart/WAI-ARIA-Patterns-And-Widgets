@@ -6,8 +6,10 @@ Here you will find ARIA implementation patterns for common widgets that both enu
 
 This section provide common accessible rich internet application patterns and widgets using the fast, lightweight, cross-platform **Vanilla JS** framework and the powerful **progressive enhancement (PE)** methodology.
 
- - [**Accordion (Sections With Show/Hide Functionality)**](dist/accordion)
-   An accordion is a vertically stacked set of interactive headings that each contain a title, content snippet, or thumbnail representing a section of content. The headings function as controls that enable users to reveal or hide their associated sections of content.
+- [**Accordion (Sections With Show/Hide Functionality)**](dist/accordion)
+  An accordion is a vertically stacked set of interactive headings that each contain a title, content snippet, or thumbnail representing a section of content. The headings function as controls that enable users to reveal or hide their associated sections of content.
+- [**Disclosure (Show/Hide)**](dist/disclosure)
+  A disclosure is a `button` that controls visibility of a section of content. When the controlled content is hidden, it is often styled as a typical push button with a right-pointing arrow, triangle ... to hint that activating the button will display additional content. When the content is visible, the arrow, triangle ... typically points down.
 - **...**
 
 ## Widgets Delivery (CDN)

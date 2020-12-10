@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Progressively Enhanced Disclosure (Show/Hide) for Dynamic Content that implements ARIA Authoring Practices 1.1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script>
+      // Add 'js' to the HTML
+      document.documentElement.className = 'js';
+    </script>
+    <link rel="stylesheet" href="../../web/css/base.css" />
+    <link rel="stylesheet" href="css/disclosure.css" />
+    <link rel="stylesheet" href="../../dist/css/aria-required.min.css" />
+  </head>
+  <body>
+    <main role="main">
+      <nav aria-label="Related Links">
+        <ul>
+          <li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#disclosure">Disclosure (Show/Hide) Design Pattern in WAI-ARIA Authoring Practices 1.1</a></li>
+          <li><a href="https://github.com/smillart/WAI-ARIA-Patterns-And-Widgets/tree/master/dist/disclosure">Disclosure Source Code for these Examples on GitHub</a></li>
+        </ul>
+      </nav>
+      <h1>Progressively Enhanced Disclosure (Show/Hide) for Dynamic Content that implements ARIA Authoring Practices 1.1</h1>
+      <p>The below example sections demonstrate the design pattern for disclosure. The visual design includes features intended to help users understand that the disclosure provides enhanced keyboard navigation functions.</p>
+      <p>Notice that when JavaScript disabled, each section retains an appropriate document structure and the content is completely accessible.</p>
+      <section>
+        <h2>Example 1: The default one. Toggle the visibility of content.</h2>
+        <p>A <em>disclosure component</em> is the formal name for the pattern where you click a <code>button</code> to reveal or hide content. This includes things like a <em>"Show more/Show less"</em> interaction for some descriptive text below a YouTube video (for example).</p>
+        <div data-aria-disclosure>
+          <p>The visual indication of expanded and collapsed states is synchronized with the value of <code>aria-expanded</code> using a CSS attribute selector and <code>:before</code> pseudo element that generates an arrow with the <code>content</code> property.</p>
+        </div>
+      </section>
+      <section>
+        <h2>Example 2: Toggle the visibility of content using an existing <code>button</code> element which is meant to be used as the disclosure controller.</h2>
+        <p>This implementation allow you to identify an existing <code>button</code> element as the disclosure controller using its <code>id</code> as value of the <code>data-aria-disclosure-controller</code> attribute, set on the disclosure content.</p>
+        <p>Remember that when you choose to use your own <code>button</code> element as triggering element, the reading order in a screen-reader which is based on the order of the HTML elements in the DOM (Document Object Model), has to keep the default tab order.</p>
+        <p><button id="dis-trigger" class="button--disclosure">Toggle Content (from this existing <code>button</code> element)</button></p>
+        <div data-aria-disclosure data-aria-disclosure-controller="dis-trigger">
+          <p>That's why new dynamic content has to be inserted into the <abbr title="Document Object Model">DOM</abbr> immediately following the element that was activated to trigger the script. The triggering element must be a <code>button</code> element (natively focusable and activatable).</p>
+          <p>Focus remains on the activated element and the new content, inserted after it, becomes the next thing in both the tab order and screen-reader reading order. This implementation is necessary to meet the <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1 - <a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order">2.4.3: Focus Order</a> criterion.</p>
+        </div>
+      </section>
+    </main> <!-- /.content-area -->
+    <script src="../../dist/disclosure/js/disclosure.min.js"></script>
+  </body>
+</html>

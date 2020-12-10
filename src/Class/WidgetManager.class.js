@@ -3,7 +3,7 @@
  * JavaScript widget manager class which provides common, repetitive and useful operations.
  *
  * Author: Sébastien Millart.
- * Version: 1.0.6
+ * Version: 1.1.x
  * Licence: https://github.com/smillart/WAI-ARIA-Patterns-And-Widgets/blob/master/LICENSE
  */
 
@@ -55,11 +55,11 @@ class WidgetManager {
    *
    * Generate custom class and remove related data attribute (if forced).
    */
-  addClass(element, className, forceRemove = true) {
+  addClass(element, className, forceRemove = true, suffix = ``) {
     if (typeof className === 'string') {
       var dataAttribute = `data-${className.replace(/__|--/g,`-`)}`;
       if (element) {
-        element.classList.add(className);
+        element.classList.add(`${className}${suffix}`);
         if (element.hasAttribute(dataAttribute) && forceRemove) element.removeAttribute(dataAttribute);
       }
     }

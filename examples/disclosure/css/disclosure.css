@@ -1,0 +1,41 @@
+button.button--disclosure,
+.aria-disclosure > button {
+  background: none;
+  color: #005a9c;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 0 0 0 1.25em;
+  position: relative;
+  text-align: left;
+  text-decoration: underline;
+  border-style: none;
+}
+.aria-disclosure > button {
+  margin-bottom: 1rem;
+}
+button.button--disclosure::-moz-focus-inner,
+.aria-disclosure > button::-moz-focus-inner {
+  border: 0;
+}
+button.button--disclosure::before,
+.aria-disclosure > button::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  border: solid #005a9c;
+  border-width: 0 0.125rem 0.125rem 0;
+  height: 0.5rem;
+  pointer-events: none;
+  transform: translateY(-60%) rotate(-45deg);
+  width: 0.5rem;
+}
+button.button--disclosure:hover,
+.aria-disclosure > button:hover {
+  text-decoration: none;
+}
+button.button--disclosure[aria-expanded="true"]::before,
+.aria-disclosure > button[aria-expanded="true"]::before {
+  transform: translateX(30%) translateY(-70%) rotate(45deg);
+}
