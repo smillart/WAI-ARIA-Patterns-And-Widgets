@@ -1,1 +1,1 @@
-[class*=aria-][hidden]{display:none}
+[class*=aria-][hidden]{display:none}@media print{[class*=aria-][hidden]{display:block}}
